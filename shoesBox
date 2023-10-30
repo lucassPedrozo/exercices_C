@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+int main(){
+   int i,n,tam,par=0;
+   char pe;
+
+   int D[n],E[n];
+   while(scanf("%d",&n)>=0){
+          if (n<0){
+              return 0;
+          }
+
+       for(i=0;i<0;i++){
+           D[i]=0;
+           E[i]=0;
+       }
+
+       while(n--){
+           scanf("%d %c",&tam,&pe);
+           if(pe=='D'){
+               D[tam]++;
+           }else{
+               E[tam]--;
+           }
+           if(E[tam]&&D[tam]){
+               E[tam]--;
+               D[tam]--;
+               par++;
+           }
+       }
+        printf("%d\n",par);
+       }
+          return 0;
+   }
