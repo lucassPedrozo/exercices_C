@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+  //a= Largura Conteiner        //x= Largura Navio          //CH= Conteiners na Horizontal      //H=Altura limite
+  //b= Comprimento conteiner    //y= Comprimento Navio      //CV= Conteiners na Vertical        //NC= Numero de conteiners
+  //c= Altura conteiner         //z= Altura Navio(limite)   //CTB= Total de conteiners na base
+
+int main()
+{       int a, b, c,
+        x, y, z,
+        CH, CV, CTB, H, NC;
+
+    printf("Escreva as medidas do conteiner (Largura, profundidade e altura)\n\n");
+    scanf("%i%i%i", &a, &b, &c);
+
+    if (a<0 || b<0 || c <0) {
+            printf("ERROR");
+            return 0;
+    }
+
+    printf("\n\nEscreva as medidas do navio (Largura, profundidade e altura)\n\n");
+    scanf("%i%i%i", &x, &y, &z);
+
+    if (a<0 || b<0 || c <0) {
+            printf("ERROR");
+            return 0;
+    }
+
+    CH = x / a ;
+    CV = y / b ;
+    CTB = CH * CV;
+    H = z/c;
+    NC = CTB*H;
+
+    printf("\nO navio contem %i conteiner(s)", NC);
+
+    return 0;
+}
