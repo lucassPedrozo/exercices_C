@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    int numeroDecimal;
+    int numeroBinario[32];
+    int varNumDecimal;
+
+    while (1) {
+        int index = 0;
+        int tempDecimal;
+        int numeroOctal = 0;
+        int peso = 1;
+
+        while (1) {
+            scanf("%d", &numeroDecimal);
+
+            if (numeroDecimal >= 0)
+                break;
+        }
+
+        if (numeroDecimal < 0)
+            break;
+
+        tempDecimal = numeroDecimal;
+
+        if (numeroDecimal == 0) {
+            printf("0 0\n");
+            break;
+        }
+
+        while (numeroDecimal > 0) {
+            varNumDecimal = numeroDecimal;
+            numeroBinario[index] = numeroDecimal % 2;
+            numeroDecimal /= 2;
+            index++;
+        }
+
+        for (int i = index - 1; i >= 0; i--) {
+            printf("%d", numeroBinario[i]);
+        }
+
+        while (tempDecimal > 0) {
+            int resto = tempDecimal % 8;
+            numeroOctal += resto * peso;
+            tempDecimal /= 8;
+            peso *= 10;
+        }
+
+        printf(" %d", numeroOctal);
+
+        if (varNumDecimal > 0)
+            return 0;
+    }
+
+    return 0;
+}
