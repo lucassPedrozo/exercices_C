@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int metroCubico,x,i;
+    float valor;
+    
+    scanf("%i", &metroCubico);
+    for (i=0; i<=metroCubico; i++) {
+        if (i<=10) {
+            valor = 9;
+        }
+        if (i>10 && i<=30) {
+           valor++;
+        }
+        if (i>30 && i<=100) {
+           valor = valor + 2;
+        }
+        if (i>100) {
+           valor = valor + 5;
+        }
+    }
+    printf("%.2f",valor);
+    return 0;
+}
