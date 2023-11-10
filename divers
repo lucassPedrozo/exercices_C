@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    int totalMerg, totalVolta, numeroMerg, i;
+    int count;
+    
+    scanf("%i", &totalMerg);
+    
+    if (totalMerg<=0) {
+          printf("ERRO");
+          return 0;  
+        }
+    
+    scanf("%i", &totalVolta);
+    
+    int vet[totalMerg];
+    
+    if (totalVolta==totalMerg) {
+          printf("*");
+          return 0;  
+        }
+    
+    for (i=0; i<totalVolta; i++) {
+        scanf("%d", &numeroMerg);
+        
+        if (numeroMerg<=0) {
+          printf("ERRO");
+          return 0;  
+        }
+        
+        vet[numeroMerg] = 1;
+    }
+    
+    for (i=0; i<=totalMerg; i++) {
+        if (vet[i]!=1 && i>0) {
+            printf("%i\n", i);
+        }
+    }
+
+    return 0;
+}
